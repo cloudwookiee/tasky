@@ -10,8 +10,8 @@ on:
 env:
   DOCKER_IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/tasky-app
   K8S_MANIFEST_DIR: kubernetes
-  GKE_CLUSTER: autopilot-cluster-1 # TODO: Replace with the name of your GKE cluster
-  GKE_ZONE: us-central1   # TODO: Replace with the zone of your GKE cluster
+  GKE_CLUSTER: tasky-app-gke-cluster # TODO: Replace with the name of your GKE cluster
+  GKE_ZONE: us-east1   # TODO: Replace with the zone of your GKE cluster
   GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }} 
 
 jobs:
