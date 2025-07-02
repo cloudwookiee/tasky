@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tasky-app-deployment  
+  labels:
+    app: tasky-app          
+spec:
+  replicas: 3             
+  selector:
+    matchLabels:
+      app: tasky-app    
+  template:
+    metadata:
+      labels:
+        app: tasky-app   
+    spec:
+      serviceAccountName: tasky-app-sa  
+      containers:
+      - name: tasky-app
+        image: docker.io/cloudwookiee1/tasky-app:latest 
+        ports:
+        - containerPort: 8080  
+        env:
+        - name: MONGODB_URI  
+          valueFrom:
+            secretKeyRef:
+              name: webapp-secrets
+              key: MONGODB_URI
+        - name: SECRET_KEY 
+          valueFrom:
+            secretKeyRef:
+              name: webapp-secrets
+              key: SECRET_KEY
+        resources:
+          requests:       
+            memory: "64Mi"
+            cpu: "250m"
+          limits:          
+            memory: "128Mi"
+            cpu: "500m"
