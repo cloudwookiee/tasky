@@ -78,4 +78,4 @@ jobs:
       - name: Deploy to Kubernetes
         run: |
           kubectl apply -f ${{ env.K8S_MANIFEST_DIR }}/
-          kubectl rollout status deployment/my-app-deployment # Replace with your deployment name from deployment.yaml
+          kubectl rollout status deployment/tasky-app-deployment # Replace with your deployment name from deployment.yaml
