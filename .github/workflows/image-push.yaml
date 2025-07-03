@@ -57,7 +57,7 @@ jobs:
         uses: google-github-actions/get-gke-credentials@v2
         with:
           cluster_name: ${{ env.GKE_CLUSTER }}
-          location: ${{ env.GKE_ZONE }}
+          location: ${{ env.GKE_REGION }}
 
       # Step 7: Update Kubernetes deployment manifest
       - name: Update Kubernetes manifest
