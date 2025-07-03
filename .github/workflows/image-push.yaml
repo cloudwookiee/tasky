@@ -10,7 +10,7 @@ on:
 env:
   DOCKER_IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/tasky-app
   K8S_MANIFEST_DIR: kubernetes
-  GKE_CLUSTER: tasky-app-gke-cluster # TODO: Replace with the name of your GKE cluster
+  GKE_CLUSTER: tasky-app-gke-cluster01 # TODO: Replace with the name of your GKE cluster
   GKE_REGION: us-east1  
   GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }} 
 
